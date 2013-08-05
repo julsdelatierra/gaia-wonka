@@ -1,0 +1,14 @@
+{
+    "name": "gaia",
+    "description": "gaia ui pack for wonkajs",
+    "version": "1.0",
+    "author": "@jceb",
+    "homepage": "http://github.com/julianceballos/gaiawonka",
+    "_id": "gaia@1.0",
+    "resources": {
+        "images": [],
+        "stylesheets": [],
+        "fonts": []
+    },
+    "libraries": []
+}
