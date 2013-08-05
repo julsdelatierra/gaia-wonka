@@ -21,7 +21,7 @@ textarea {
   border: 0.1rem solid #ccc;
   border-radius: 0.3rem;
   box-shadow: none; /* override the box-shadow from the system (performance issue) */
-  background: #fff url(input_areas/images/ui/shadow.png) repeat-x;
+  background: #fff url('@{images-route}/input_areas/images/ui/shadow.png') repeat-x;
 }
 
 textarea {
@@ -71,12 +71,12 @@ form p textarea + button[type="reset"] {
   font-size: 0;
   opacity: 0;
   pointer-events: none;
-  background: transparent url(input_areas/images/icons/clear.png) no-repeat 50% 50% / 1.7rem auto;
+  background: transparent url('@{images-route}/input_areas/images/icons/clear.png') no-repeat 50% 50% / 1.7rem auto;
 }
 
 form.skin-dark p input + button[type="reset"],
 form.skin-dark p textarea + button[type="reset"] {
-  background-image: url(input_areas/images/icons/clear-dark.png);
+  background-image: url('@{images-route}/input_areas/images/icons/clear-dark.png');
 }
 
 /* To avoid colission with BB butons */

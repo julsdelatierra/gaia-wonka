@@ -22,7 +22,7 @@ a[role="button"],
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: #fafafa url(buttons/images/ui/default.png) repeat-x left bottom / auto 100%;
+  background: #fafafa url('@{images-route}/buttons/images/ui/default.png') repeat-x left bottom / auto 100%;
   border: 0.1rem solid #a6a6a6;
   border-radius: 0.2rem;
   font-weight: 500;
@@ -49,7 +49,7 @@ a.recommend[role="button"]:active  {
 /* Recommend */
 button.recommend,
 a[role="button"].recommend {
-  background-image: url(buttons/images/ui/recommend.png);
+  background-image: url('@{images-route}/buttons/images/ui/recommend.png');
   background-color: #00caf2;
   border-color: #008eab;
 }
@@ -58,7 +58,7 @@ a[role="button"].recommend {
 button.danger,
 a.danger[role="button"],
 span.danger[role="button"] {
-  background-image: url(buttons/images/ui/danger.png);
+  background-image: url('@{images-route}/buttons/images/ui/danger.png');
   background-color: #b70404;
   color: #fff;
   text-shadow: none;
@@ -69,7 +69,7 @@ span.danger[role="button"] {
 button.danger:active,
 a[role="button"].danger:active,
 .button.danger:active {
-  background-image: url(buttons/images/ui/danger-press.png);
+  background-image: url('@{images-route}/buttons/images/ui/danger-press.png');
   background-color: #890707;
 }
 
@@ -135,7 +135,7 @@ li .button:after {
   left: 0;
   right: 0;
   height: 0.2rem;
-  background: url( buttons/images/ui/shadow.png) repeat-x left bottom / auto 100%;
+  background: url('@{images-route}/buttons/images/ui/shadow.png') repeat-x left bottom / auto 100%;
 }
 
 /* Press */
@@ -175,7 +175,7 @@ li .button.icon:before {
 
 li button.icon-view:before,
 li a[role="button"].icon-view:before {
-  background: url(buttons/images/icons/view.png) no-repeat 1.6rem 0 / 1rem 9rem;
+  background: url('@{images-route}/buttons/images/icons/view.png') no-repeat 1.6rem 0 / 1rem 9rem;
 }
 
 li button.icon-view:active:before,
@@ -197,7 +197,7 @@ li .button.icon-dialog {
 li button.icon-dialog:before,
 li a[role="button"].icon-dialog:before,
 li .button.icon-dialog:before {
-  background: url(buttons/images/icons/dialog.png) no-repeat 1.6rem 0 / 1rem 9rem;
+  background: url('@{images-route}/buttons/images/icons/dialog.png') no-repeat 1.6rem 0 / 1rem 9rem;
   top: 100%;
   margin-top: -2.4rem;
 }
