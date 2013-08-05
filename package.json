@@ -6,8 +6,8 @@
     "homepage": "http://github.com/julianceballos/gaia-wonka",
     "_id": "gaia@1.0",
     "resources": {
-        "images": [],
-        "stylesheets": [],
+        "images": ["gaia"],
+        "stylesheets": ["gaia"],
         "fonts": []
     },
     "libraries": []
