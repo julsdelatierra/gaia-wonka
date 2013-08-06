@@ -9,7 +9,7 @@ $ wonkajs candy gaia
 Open your file **stylesheets/ui.less** and add:
 
 ```less
-@import "gaia.less";
+@import "gaia/gaia.less";
 ```
 
 
