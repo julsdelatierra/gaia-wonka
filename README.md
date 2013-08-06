@@ -4,6 +4,14 @@
 $ wonkajs candy gaia
 ```
 
+### Configure
+
+Open your file **stylesheets/ui.less** and add:
+
+```less
+@import "gaia.less";
+```
+
 
 ### Building Blocks
 
