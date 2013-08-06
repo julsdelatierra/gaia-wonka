@@ -1,5 +1,11 @@
-Building Blocks
-===============
+### Install
+
+```sh
+$ wonkajs candy gaia
+```
+
+
+### Building Blocks
 
 Taxonomy
 --------
