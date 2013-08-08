@@ -2,26 +2,42 @@
  * Status
  * ---------------------------------- */
 section[role="status"] {
-  background: rgba(64,64,64,1) url('@{images-route}/gaia/status/images/ui/pattern.png') repeat left top;
+  background: url('@{images-route}/gaia/ui/pattern2.png') repeat left top, url('@{images-route}/gaia/ui/gradient.png') no-repeat left top;
+  background-size: auto auto, 100% 100%;
   overflow: hidden;
   position: absolute;
   z-index: 100;
   left: 0;
   right: 0;
   bottom: 0;
+  white-space: nowrap;
+  font-family: "Open Sans", Sans-serif;
   color: #fff;
-  text-align: left;
+  height: 8rem;
+  padding: 0;
+  text-align: center;
+}
+
+section[role="status"]:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1px;
+  height: 100%;
 }
 
 section[role="status"] p {
-  font-size: 1.8rem;
-  font-weight: normal;
-  line-height: 2.2rem;
-  margin: 1rem 3rem;
-  padding: 0;
-  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  font-size: 1.6rem;
+  line-height: 1.4em;
+  max-width: 75%;
+  margin: 0;
 }
 
 section[role="status"] p strong {
-  font-weight: 500;
+  text-transform: uppercase;
+  color: #0995b0;
+  font-weight: normal;
 }

@@ -1,209 +1,290 @@
 /* ----------------------------------
- * Lists
+ * LISTS: default
  * ---------------------------------- */
-
-[data-type="list"] {
-  font-weight: 400;
-  padding: 0 1.5rem;
-}
-
-[data-type="list"] ul {
+body[role="application"] ul, body[role="application"] ol {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   overflow: hidden;
+  font-family: "Open Sans", Sans-serif;
 }
 
-[data-type="list"] strong {
-  font-weight: 500;
-}
-
-/* Title divisors */
-[data-type="list"] header {
-  border-bottom: 0.1rem solid #ff4E00;
-  padding: 0.5rem 1rem;
-  margin: 0;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-  font-weight: normal;
-  color: #ff4E00;
-  text-transform: uppercase;
-}
-
-/* List items */
-[data-type="list"] li {
+body[role="application"] li {
+  display: inline-block;
   width: 100%;
-  height: 6rem;
   -moz-box-sizing: border-box;
-  transition: transform 0.3s ease, padding 0.3s ease;
-  border-bottom: solid 0.1rem #dbd9d9;
-  color: #000;
-  margin: 0;
-  display: block;
+  transition: transform 0.3s ease;
+  border: solid 1px #dbd9d9;
+  border-right: none;
+  border-left: none;
+  margin: -1px 0 0;
   position: relative;
-  z-index: 1;
 }
 
-[data-type="list"] li:last-child {
-  border: none;
-}
-
-/* Pressed State */
-[data-type="list"] li > a {
+body[role="application"] li > a:first-of-type,
+body[role="application"] li > a:first-of-type  {
   text-decoration: none;
   color: #000;
-  display: block;
-  height: 6rem;
+  display: inline-block;
+  width: 100%;
   position: relative;
-  border: none;
-  outline: none;
 }
 
-[data-type="list"] li > a:after {
+/* State press */
+body[role="application"] li > a:first-of-type:after {
   content: "";
-  background-color: #b1f1ff;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-}
-
-[data-type="list"] li > a:active:after {
-  opacity: 0.6;
-  /* Only transition on 'press', not on 'release' */
   transition: opacity 0.2s ease;
-}
-
-/* Disabled */
-[data-type="list"] li[aria-disabled="true"]:after {
-  content: "";
-  background-color: #e6e6e6;
-  opacity: 0.7;
+  background-color: #b1f1ff;
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-}
-
-[data-type="list"] li[aria-disabled="true"] {
+  z-index: 100;
   pointer-events: none;
+  opacity: 0;
 }
 
-/* Graphic content */
-[data-type="list"] aside {
+body[role="application"] li > a:first-of-type:active:after {
+  opacity: 0.6;
+}
+
+body[role="application"] li .aside {
   float: left;
-  margin: 0 0.5rem 0 0;
-  height: 100%;
+  display: inline;
   position: relative;
-  z-index: 2;
+  width: 5.5rem;
+  height: 6rem;
+  text-align: center;
 }
 
-[data-type="list"] li > a aside,
-[data-type="list"] li > a aside.icon {
-  background-color: transparent;
-  z-index: -1;
-}
-
-[data-type="list"] aside.pack-end {
+body[role="application"] li .aside.end {
   float: right;
-  margin: 0 0 0 0.5rem;
+}
+
+body[role="application"] li .aside:before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  margin-left: -1px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+body[role="application"] li .aside time {
+  display: inline-block;
+  vertical-align: super;
+  width: 4rem;
+  padding-right: 1rem;
+  font: 1.1rem/1em "Open Sans", Sans-serif;
+  text-transform: uppercase;
   text-align: right;
 }
 
-[data-type="list"] aside.icon {
-  width: 3rem;
-  height: 6rem;
-  background: #fff no-repeat left center / 100% auto;
-  font: 0/0 a;
-  display: block;
-  overflow: hidden;
-}
-
-[data-type="list"] aside img {
-  display: block;
-  overflow: hidden;
+body[role="application"] li img {
+  float: right;
+  display: inline;
   width: 6rem;
   height: 6rem;
-  background: transparent center center / cover;
-  position: relative;
-  z-index: 1;
+  background: transparent center center;
+  background-size: 100% auto;
 }
 
-/* Text content */
-[data-type="list"] li p {
+body[role="application"] li dl {
+  display: block;
+  overflow: hidden;
+  padding: 1rem 0.5rem 0 2rem;
+}
+
+body[role="application"] li .aside ~ dl {
+  padding-left: 0.5rem;
+}
+
+body[role="application"] li dl dt {
+  font: 1.8rem/1.2em "Open Sans", Sans-serif;
   white-space: nowrap;
+  height: 2.2rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: none;
-  display: block;
-  margin: 0;
-  color: #5b5b5b;
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
-[data-type="list"] li p:first-of-type {
-  font-size: 1.8rem;
-  line-height: 2.2rem;
-  color: #000;
-  padding: 1rem 0 0;
+body[role="application"] li dl dt strong {
+  font-weight: 600;
+  font-family: "Open Sans", Sans-serif;
 }
 
-[data-type="list"] li p:only-child,
-[data-type="list"] li p:first-of-type:last-of-type {
-  line-height: 4rem;
-}
-
-[data-type="list"] li p em {
-  font-size: 1.5rem;
+body[role="application"] li dl dt em {
+  font-size: 1.3rem;
   font-style: normal;
 }
 
-[data-type="list"] li p time {
+body[role="application"] li dl mark {
+  background-color: #cfd3d7;
+}
+
+body[role="application"] li dl dd {
+  font-size: 1.4rem;
+  color: #5b5b5b;
+  white-space: nowrap;
+  height: 1.8rem;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body[role="application"] li dl dd strong {
+  font-weight: 600;
+  font-family: "Open Sans", Sans-serif;
+  color: #000;
+}
+
+body[role="application"] li dl dd time {
+  font-size: 1.4rem;
+  color: #5b5b5b;
   margin-right: 0.3rem;
-  text-transform: uppercase;
 }
 
-/* Checkable content */
-[data-type="list"] li > .pack-checkbox,
-[data-type="list"] li > .pack-radio,
-[data-type="list"] li > .pack-switch {
-  pointer-events: none;
+body[role="application"] li dl dd span {
+  margin-right: 0.3rem;
+}
+
+body[role="application"] li dl dd span:last-child {
+  margin: 0;
+}
+
+/* Icon definitions */
+body[role="application"] li .icon  {
+  display: inline-block;
+  vertical-align: middle;
+  width: 3rem;
+  height: 3rem;
+  background: transparent no-repeat center center;
+  background-size: 100% auto;
+  font: 0/0 a;
+  overflow: hidden;
+  position: relative;
+}
+
+body[role="application"] li .icon.icon-arrowaction {
+  background-image: url('@{images-route}/gaia/icons/arrowaction.png');
+  width:1rem;
+  height: 1rem;
+  vertical-align: bottom;
+  margin: 0 -3rem 0.5rem 0;
+}
+
+body[role="application"] li .icon.icon-callout {
+  background-image: url('@{images-route}/gaia/icons/callout.png');
+  width: 2.4rem;
+  height: 2rem;
+}
+
+body[role="application"] li .icon.icon-smsin {
+  background-image: url('@{images-route}/gaia/icons/smsin.png');
+  width: 2.5rem;
+  height: 2.2rem;
+}
+
+body[role="application"] li[data-state="new"] .icon.icon-smsin {
+  background-image: url('@{images-route}/gaia/icons/smsin-new.png');
+  width: 2.5rem;
+  height: 2.2rem;
+}
+
+/* State edit*/
+body[role="application"] ul[data-state="edit"] li,
+body[role="application"] ol[data-state="edit"] li {
+  transform: translateX(5rem);
+}
+
+body[role="application"] ul[data-state="edit"] li > label.check,
+body[role="application"] ol[data-state="edit"] li > label.check {
+   opacity: 1;
+}
+
+body[role="application"] li > label.check {
+  transition: opacity 0.6s ease;
+  width: 5rem;
+  height: 6rem;
+  right: 100%;
   position: absolute;
-  top: -0.1rem;
-  bottom: 0;
-  right: 0;
-  left: -4rem;
-  z-index: 1;
-  width: auto;
-  height: auto;
-  border-top: solid 0.1rem #dbd9d9;
+  top: -1px;
+  z-index: 100;
+  opacity: 0;
+  border: solid 1px #DBD9D9;
+  border-left: none;
+  border-right: none;
 }
 
-[data-type="list"] li > .pack-checkbox input + span,
-[data-type="list"] li > .pack-radio input + span,
-[data-type="list"] li > .pack-switch input + span {
+/* State disabled */
+body[role="application"] li[aria-disabled="true"]:before {
+  content: "";
+  position: absolute;
   left: 0;
-  margin-left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e6e6e6;
+  opacity: 0.7;
 }
 
-/* Edit mode */
-[data-type="list"] [data-type="edit"] li {
-  transform: translateX(4rem);
-  padding-left: 0;
+body[role="application"]  li[aria-disabled="true"] {
+  pointer-events:none;
 }
 
-[data-type="list"] [data-type="edit"] li > .pack-checkbox,
-[data-type="list"] [data-type="edit"] li > .pack-radio,
-[data-type="list"] [data-type="edit"] li > .pack-switch {
-  pointer-events: auto;
+/* State new */
+body[role="application"] li[data-state="marked"]:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.6rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-left: 0.5rem;
+  background: url('@{images-route}/gaia/icons/dot.png') no-repeat center;
+  background-size: 100% auto;
 }
 
-[data-type="list"] [data-type="edit"] li > a:active:after {
-  display: none;
+body[role="application"] li[data-state="new"] time {
+  color: #52b6cc !important;
+}
+
+/* State tagged */
+body[role="application"] li[data-state="tagged"]:after  {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  bottom: 0;
+  width: 0.4rem;
+}
+
+body[role="application"] li[data-tag="A"]:after { background-color: #e7a300; }
+body[role="application"] li[data-tag="B"]:after { background-color: #954fa7; }
+
+
+/* ----------------------------------
+ * LISTS: Overlay theme
+ * ---------------------------------- */
+body[role="application"] ul.overlay li,
+body[role="application"] ol.overlay li {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.6);
+}
+
+body[role="application"] ul.overlay  li dl dt,
+body[role="application"] ol.overlay  li dl dt {
+  color: #fff;
+}
+
+body[role="application"] ul.overlay li dl dd,
+body[role="application"] ol.overlay li dl dd {
+  color: #ccc;
+}
+
+body[role="application"] ul.overlay .icon.icon-smsin,
+body[role="application"] ol.overlay .icon.icon-smsin {
+  background-image: url('@{images-route}/gaia/icons/smsin-overlay.png');
+  width: 3.1rem;
+  height: 3.1rem;
 }

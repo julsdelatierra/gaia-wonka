@@ -1,5 +1,5 @@
 /* ----------------------------------
-* Toolbars
+* TOOLBARS
 * ---------------------------------- */
 
 [role="toolbar"] {
@@ -19,7 +19,7 @@
   margin: 0;
 }
 
-[role="toolbar"] ul:last-child {
+[role="toolbar"] .end {
   float: right;
 }
 
@@ -32,11 +32,40 @@
   height: 4rem;
   border: none;
   font-size: 0;
-  background: transparent no-repeat 50% 50% / 3rem auto;
+  background: transparent no-repeat 50% 50%;
   padding: 0;
   border-radius: 0;
 }
 
 [role="toolbar"] button:active {
   background-color: #008aaa;
+}
+
+/* Base icons */
+[role="toolbar"] .update {
+  background-image: url('@{images-route}/gaia/icons/update.png');
+}
+
+[role="toolbar"] .mark {
+  background-image: url('@{images-route}/gaia/icons/mark.png');
+}
+
+[role="toolbar"] .share {
+  background-image: url('@{images-route}/gaia/icons/share.png');
+}
+
+[role="toolbar"] .send {
+  background-image: url('@{images-route}/gaia/icons/send.png');
+}
+
+[role="toolbar"] .search {
+  background-image: url('@{images-route}/gaia/icons/search.png');
+}
+
+[role="toolbar"] .move {
+  background-image: url('@{images-route}/gaia/icons/move.png');
+}
+
+[role="toolbar"] .delete {
+  background-image: url('@{images-route}/gaia/icons/delete.png');
 }

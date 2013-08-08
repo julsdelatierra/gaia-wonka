@@ -1,15 +1,15 @@
 /* ----------------------------------
- * Scrolling
+ * SCROLLING
  * ---------------------------------- */
-nav[data-type="scrollbar"] {
+ body[role="application"] nav[role="scrollbar"] {
+  font-family: "Open Sans", Sans-serif;
   position: absolute;
   right: 0;
   top: 0;
-  bottom: 0;
  }
 
 /* Mirror */
-nav[data-type="scrollbar"] p {
+body[role="application"] nav[role="scrollbar"] p {
   position: absolute;
   right: 4rem;
   top: 30%;
@@ -17,61 +17,59 @@ nav[data-type="scrollbar"] p {
   width: 10.5rem;
   height: 10.5rem;
   opacity: 0;
-  font-weight: 200;
-  font-size: 6rem;
-  line-height: 10.5rem;
-  color: #fff;
-  background: url('@{images-route}/gaia/scrolling/images/ui/background.png') repeat left top;
+  transition: opacity;
+  background: -moz-element(#scrollbar-state) no-repeat center center, url('@{images-route}/gaia/ui/background2.png') repeat left top;
   pointer-events: none;
   text-align: center;
-  transition: opacity;
 }
 
-nav[data-type="scrollbar"] ol {
+/* Original element */
+#scrollbar-state {
+  font: 200 6rem/10.5rem "Open Sans", Sans-serif;
+  color: #fff;
+  position: absolute;
+  right: 100%;
+}
+
+body[role="application"] nav[role="scrollbar"] ol {
   padding: 0.3rem 0;
   margin: 0;
-  height: 100%;
-  -moz-box-sizing: border-box;
   border-radius: 4rem;
   opacity: 0.6;
   list-style: none;
 }
 
-nav[data-type="scrollbar"] li {
+body[role="application"] nav[role="scrollbar"] li {
   font-size: 1rem;
   line-height: 1.4em;
   text-align: center;
   text-transform: uppercase;
   width: 4.5rem;
-  height: 3.44%; /* 100% / 29 items */
 }
 
-nav[data-type="scrollbar"] li a {
+body[role="application"] nav[role="scrollbar"] li a {
   display: block;
   color: #333;
   width: 100%;
-  height: 100%;
   text-indent: 1.5rem;
   text-decoration: none;
 }
 
 /* Top action icons */
-nav[data-type="scrollbar"] li .pack-icon-search,
-nav[data-type="scrollbar"] li .pack-icon-favorites {
+body[role="application"] nav[role="scrollbar"] li .search,
+body[role="application"] nav[role="scrollbar"] li .favourites {
   width: 1.2rem;
   height: 1.2rem;
-  font-size: 0;
-  vertical-align: middle;
-  background: transparent no-repeat center center / 1rem 1rem;
-}
-nav[data-type="scrollbar"] li span:not([hidden]) {
+  font: 0/0 a;
   display: inline-block;
+  vertical-align: middle;
+  background: transparent no-repeat center center;
 }
 
-nav[data-type="scrollbar"] li .pack-icon-search {
-  background-image: url('@{images-route}/gaia/scrolling/images/icons/search.png');
+body[role="application"] nav[role="scrollbar"] li .search {
+  background-image: url('@{images-route}/gaia/icons/search2.png');
 }
 
-nav[data-type="scrollbar"] li .pack-icon-favorites {
-  background-image: url('@{images-route}/gaia/scrolling/images/icons/favorites.png');
+body[role="application"] nav[role="scrollbar"] li .favourites {
+  background-image: url('@{images-route}/gaia/icons/favourites.png');
 }
