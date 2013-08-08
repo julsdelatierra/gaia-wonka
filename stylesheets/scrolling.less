@@ -1,7 +1,7 @@
 /* ----------------------------------
  * SCROLLING
  * ---------------------------------- */
- body[role="application"] nav[role="scrollbar"] {
+ [role="application"] nav[role="scrollbar"] {
   font-family: "Open Sans", Sans-serif;
   position: absolute;
   right: 0;
@@ -9,7 +9,7 @@
  }
 
 /* Mirror */
-body[role="application"] nav[role="scrollbar"] p {
+[role="application"] nav[role="scrollbar"] p {
   position: absolute;
   right: 4rem;
   top: 30%;
@@ -18,7 +18,7 @@ body[role="application"] nav[role="scrollbar"] p {
   height: 10.5rem;
   opacity: 0;
   transition: opacity;
-  background: -moz-element(#scrollbar-state) no-repeat center center, url('@{images-route}/gaia/ui/background2.png') repeat left top;
+  background: ~'-moz-element(#scrollbar-state) no-repeat center center, url("@{images-route}/gaia/ui/background2.png") repeat left top';
   pointer-events: none;
   text-align: center;
 }
@@ -31,7 +31,7 @@ body[role="application"] nav[role="scrollbar"] p {
   right: 100%;
 }
 
-body[role="application"] nav[role="scrollbar"] ol {
+[role="application"] nav[role="scrollbar"] ol {
   padding: 0.3rem 0;
   margin: 0;
   border-radius: 4rem;
@@ -39,7 +39,7 @@ body[role="application"] nav[role="scrollbar"] ol {
   list-style: none;
 }
 
-body[role="application"] nav[role="scrollbar"] li {
+[role="application"] nav[role="scrollbar"] li {
   font-size: 1rem;
   line-height: 1.4em;
   text-align: center;
@@ -47,7 +47,7 @@ body[role="application"] nav[role="scrollbar"] li {
   width: 4.5rem;
 }
 
-body[role="application"] nav[role="scrollbar"] li a {
+[role="application"] nav[role="scrollbar"] li a {
   display: block;
   color: #333;
   width: 100%;
@@ -56,8 +56,8 @@ body[role="application"] nav[role="scrollbar"] li a {
 }
 
 /* Top action icons */
-body[role="application"] nav[role="scrollbar"] li .search,
-body[role="application"] nav[role="scrollbar"] li .favourites {
+[role="application"] nav[role="scrollbar"] li .search,
+[role="application"] nav[role="scrollbar"] li .favourites {
   width: 1.2rem;
   height: 1.2rem;
   font: ~'0/0 a';
@@ -66,10 +66,10 @@ body[role="application"] nav[role="scrollbar"] li .favourites {
   background: transparent no-repeat center center;
 }
 
-body[role="application"] nav[role="scrollbar"] li .search {
+[role="application"] nav[role="scrollbar"] li .search {
   background-image: url('@{images-route}/gaia/icons/search2.png');
 }
 
-body[role="application"] nav[role="scrollbar"] li .favourites {
+[role="application"] nav[role="scrollbar"] li .favourites {
   background-image: url('@{images-route}/gaia/icons/favourites.png');
 }
