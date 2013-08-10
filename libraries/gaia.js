@@ -6,19 +6,7 @@ var gaia = {
 Implementation:
 gaia.ui.dialog({
   title: '',
-  message: '',
-  buttons: [
-    {
-      'title': 'Ok',
-      'type': 'recommend',
-      'onClick': function() {}
-    },
-    {
-      'title': 'Cancel',
-      'type': 'default',
-      'onClick': function() {}
-    }
-  ]
+  message: ''
 });
 */
 
@@ -41,14 +29,32 @@ gaia.ui.dialog = function(options) {
   var message = $('<p>', {
     text: options.message
   });
+
   container.append(message);
 
   dialog.append(container);
 
-  var buttons = $('<menu>');
+  var buttonsBar = $('<menu>');
 
-  for (var i in options.buttons) {
-    var button = options.buttons[i];
+  var buttons = [];
+
+  if ('rightButton' in options) {
+    buttons.push(options.rightButton);
+  }
+
+  if ('leftButton' in options) {
+    buttons.push(options.leftButton);
+  }
+
+  if (buttons.length == 0) {
+    buttons.push({
+      title: 'OK',
+      type: 'default'
+    });
+  }
+
+  for (var i in buttons) {
+    var button = buttons[i];
     var buttonProps = {
       text: button.title
     };
@@ -62,22 +68,24 @@ gaia.ui.dialog = function(options) {
       buttonTag.on('click', button.onClick);
     } else {
       buttonTag.on('click', function() {
-        dialog.fadeOut('slow', function() {
+        dialog.fadeOut(600, function() {
           dialog.remove();
         });
       });
     }
 
-    if (options.buttons.length == 1) {
+    if (buttons.length == 1) {
       buttonTag.css('width', 'calc(100%)');
     }
 
-    buttons.append(buttonTag);
+    buttonsBar.append(buttonTag);
 
   }
 
-  dialog.append(buttons);
+  dialog.append(buttonsBar);
 
   $('[role="application"]').append(dialog);
+
+  dialog.fadeIn(600);
 
 }
